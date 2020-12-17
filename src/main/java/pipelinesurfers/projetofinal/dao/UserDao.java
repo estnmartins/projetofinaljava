@@ -15,6 +15,6 @@ public interface UserDao extends CrudRepository<User, Integer> {
 /*     @Query(value="Select new User(u.name, u.email) from User u where u.id = :cod")
     public User buscaPorId(@Param("cod") Integer codigo);
  */
-    @Query(value = "Select name,email from tbl_usuario where id = :cod", nativeQuery = true)
+    @Query(value = "Select nome,email from tbl_usuario where id = :cod", nativeQuery = true)
     public Object buscarUsuariosPorId(@Param("cod") Integer codigo); // quando retornar mais de um resultado utilizar [COLCHETES] no object
 }

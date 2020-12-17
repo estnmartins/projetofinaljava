@@ -23,14 +23,14 @@ public class UserController {
     @Autowired // Injecao de dependencia
     private UserDao dao;
 
-    @GetMapping("/all")
+ @GetMapping("/all")
     public List<User> listarTodos() {
         List<User> lista = (List<User>) dao.findAll();
 
         return lista;
-    }
+    } 
 
-    @GetMapping("/id/{id}") // {Nome da variavel}
+   /*  @GetMapping("/id/{id}") // {Nome da variavel}
     public ResponseEntity<User> BuscaPorId(@PathVariable int id) { // int id - nome precisa ser igual ao declarado no
                                                                    // GETMAPPING
         User user = dao.findById(id).orElse(null);
@@ -41,16 +41,16 @@ public class UserController {
             
         }
         return ResponseEntity.notFound().build(); // // not found 404
-    }
+    } */
 
-    @PostMapping("/new")
+   /*  @PostMapping("/new")
     public ResponseEntity<User> novoUsuario(@RequestBody User user){
         User newUser = dao.save(user);
         return ResponseEntity.ok(newUser);
 
     } 
-
-    @PostMapping("/email")
+ */
+   /*  @PostMapping("/email")
     public ResponseEntity<UserDto> buscaPorEmail(@RequestBody User user) {
         User userFinded = dao.findByEmail(user.getEmail());
 
@@ -59,7 +59,7 @@ public class UserController {
             return ResponseEntity.ok(userDto);
         }
         return ResponseEntity.notFound().build();
-    }
+    } */
 
     @PostMapping("/loginemail")
     public ResponseEntity<UserDto> loginPorEmail(@RequestBody User user) {
@@ -72,7 +72,7 @@ public class UserController {
         return ResponseEntity.notFound().build();
     }
 
-    @PostMapping("/login")
+/*     @PostMapping("/login")
     public ResponseEntity<UserDto> login(@RequestBody User user) {
         User userFinded = dao.findByEmailOrRacf(user.getEmail(), user.getRacf());
 
@@ -85,8 +85,8 @@ public class UserController {
         }
         return ResponseEntity.status(401).build();
     }
-
-    @GetMapping("/id3/{id}")
+ */
+   /*  @GetMapping("/id3/{id}")
     public ResponseEntity<Object> buscarUserPersonalizado(@PathVariable int id){
         Object userFinded = dao.buscarUsuariosPorId(id);
 
@@ -97,6 +97,6 @@ public class UserController {
         return ResponseEntity.notFound().build();
 
 
-    }
+    } */
 
 }

@@ -7,12 +7,12 @@ import lombok.Setter;
 // DTO - Data Transfer Object
 @Getter @Setter
 public class UserDto {
-    private String name;
+    private String nome;
     private String email;
     private String racf;
 
     public UserDto(User user) {
-        this.name = user.getName();
+        this.nome = user.getNome();
         this.email = user.getEmail();
         this.racf = user.getRacf();
     }
