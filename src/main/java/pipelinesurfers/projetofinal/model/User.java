@@ -23,8 +23,8 @@ public class User {
     @Column(name = "id")
     private int id;
 
-    @Column(name = "nome", length = 150, nullable = false)
-    private String nome;
+    @Column(name = "name", length = 150, nullable = false)
+    private String name;
 
     @Column(name = "email", length = 100, nullable = false, unique = true)
     private String email;
@@ -35,9 +35,12 @@ public class User {
     @Column(name = "senha", length = 30, nullable = false)
     private String senha;
 
+    @Column(name = "linkfoto", length = 200)
+    private String link;
+
  
-        public User(String nome, String email) {
-        this.nome = nome;
+        public User(String name, String email) {
+        this.name = name;
         this.email = email;
     }
 

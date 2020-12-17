@@ -8,23 +8,22 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import pipelinesurfers.projetofinal.dao.AgenteDao;
-import pipelinesurfers.projetofinal.model.AgenteFinanceiro;
+import pipelinesurfers.projetofinal.dao.ContagemDao;
+import pipelinesurfers.projetofinal.model.Transacao;
 
 @RestController
 @CrossOrigin("*")
-@RequestMapping("/agentes")
-
-public class AgenteController {
+@RequestMapping("/transacao")
+public class ContagemController {
 
     @Autowired // Injecao de dependencia
-    private AgenteDao dao;
-    
+    private ContagemDao dao;
+
     @GetMapping("/all")
-    public List<AgenteFinanceiro> listarTodos() {
-        List<AgenteFinanceiro> lista = (List<AgenteFinanceiro>) dao.findTop10ByOrderByVolumeTransacionalDesc();
+    public List<Transacao> listarTodos() {
+        List<Transacao> lista = (List<Transacao>) dao.findAll();
 
         return lista;
     } 
+    
 }
- 
